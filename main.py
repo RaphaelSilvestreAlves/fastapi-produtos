@@ -54,7 +54,7 @@ def update_product(product_id: int, product: ProductCreate):
     for existing_product in products:
         if existing_product["id"] == product_id:
             existing_product["name"] = product.name
-            existing_product["price"] ==product.price
+            existing_product["price"] = product.price
             existing_product["in_stock"] = product.in_stock
             
             return existing_product
@@ -67,7 +67,7 @@ def delete_product(product_id: int):
         if product["id"] == product_id:
             deleted_product = products.pop(index)
             return {
-                "message": "Produto deletado com sucesso",
+                "message": "Product deleted sucessfully",
                 "product": deleted_product
             }
 
